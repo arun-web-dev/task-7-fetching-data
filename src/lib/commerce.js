@@ -1,7 +1,5 @@
 import Commerce from "@chec/commerce.js";
 
-console.log(process.env);
-
 const checAPIKey = process.env.REACT_APP_CHEC_PUBLIC_KEY;
 const devEnvironment = process.env.NODE_ENV === "development";
 const commerceConfig = {
