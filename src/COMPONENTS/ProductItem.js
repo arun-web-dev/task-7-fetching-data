@@ -3,7 +3,7 @@ import propTypes from "prop-types";
 const ProductItem = ({ product }) => {
   return (
     <div className="product__card  pro mr3">
-      <a
+      <div
         className="db center w-100 black link dim pointer"
         title={product.name}
       >
@@ -19,7 +19,7 @@ const ProductItem = ({ product }) => {
             {product.price.formatted_with_symbol}
           </dd>
         </dl>
-      </a>
+      </div>
     </div>
   );
 };
