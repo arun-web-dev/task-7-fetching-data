@@ -8,11 +8,11 @@ const ProductsList = ({ products }) => {
   const menus = ["Home Furnishing", "Furniture", "Accessories"];
 
   return (
-    <div className="mt3 ">
+    <div className="mt3 product-list-view-container">
       {menus.map((menu, idx) => {
         return (
           <div key={idx}>
-            <h2 className="mv3 code ">{menu}</h2>
+            <h2 className="mv3 code ">{`${menu}(${products.length})`}</h2>
             <Carousel
               additionalTransfrom={0}
               arrows

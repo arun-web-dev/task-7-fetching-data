@@ -38,16 +38,24 @@ code {
     monospace;
 }
 
+.header {
+  background-color: #2874f0;
+}
+
 .logo {
   font-family: "Cookie", cursive;
   font-weight: 600;
-  background-color: #2874f0;
   color: #f0f0f0;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 200;
   user-select: none;
+}
+
+.logo-container {
+  flex: 0.3;
+  text-decoration: none;
 }
 
 .product-image {
@@ -57,10 +65,11 @@ code {
 }
 
 .loading-spinner {
+  width: 80%;
+  float: right;
   display: flex;
-  height: 100vh;
   justify-content: center;
-  align-items: center;
+  margin-top: 50px;
 }
 
 .loading-spinner img {
@@ -88,4 +97,55 @@ code {
 .react-multiple-carousel__arrow.react-multiple-carousel__arrow--right,
 .react-multiple-carousel__arrow.react-multiple-carousel__arrow--left {
   z-index: 2;
+}
+
+.shopping-cart {
+  color: #f0f0f0;
+}
+
+.categories-container.shadow-1.pa2 {
+  display: inline-block;
+  width: 15%;
+  height: 100vh;
+}
+
+.mt3.product-list-view-container {
+  width: 85%;
+  float: right;
+  padding-left: 50px;
+}
+
+.product-detail-right.pa3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.shopping-cart.ml3.pointer {
+  flex: 0.2 1;
+  width: 100%;
+}
+
+.shopping-cart.ml3.pointer > div {
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.cart {
+  position: relative;
+  margin-top: 5px;
+}
+
+.cart > span {
+  position: absolute;
+  top: -15px;
+  left: 45%;
+  display: inline-block;
+  font-size: 9px;
+  background-color: #f0f0f0;
+  color: #000;
+  padding: 4px;
+  border-radius: 100%;
+  transform: translateX(-50%);
 }

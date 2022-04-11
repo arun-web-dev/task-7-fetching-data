@@ -1,0 +1,34 @@
+.product-detail {
+  display: flex;
+  max-width: 80%;
+  height: 60vh;
+  margin: 0 auto;
+  margin-top: 10vh;
+  &-image {
+    flex: 0.4;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 3s;
+    }
+    img:hover {
+      transform: scale(1.4);
+    }
+  }
+  &-right {
+    flex: 0.6;
+    &-btn {
+      border: none;
+      background-color: #4285f4;
+      color: #f0f0f0;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    &-btn:hover {
+      background-color: #3273db;
+      transform: translateY(-3px);
+    }
+  }
+}

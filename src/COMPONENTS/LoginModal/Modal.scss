@@ -1,0 +1,11 @@
+.modal {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 197vh;
+  display: grid;
+  place-items: center;
+  margin-top: 45%;
+  z-index: 500;
+  background: yellowgreen;
+}
