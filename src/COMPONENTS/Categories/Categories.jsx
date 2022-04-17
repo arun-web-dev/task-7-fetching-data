@@ -1,13 +1,14 @@
-import React, { useEffect, useRef } from "react";
-
+import React, { useEffect, useRef, useState } from "react";
+import "./Categories.scss";
 export default function Categories(props) {
   let category = props.products.map((product) => {
     return product.categories[0]?.name;
   });
-  const { categoryFilterHandler } = props;
+  const [priceRange, setPriceRange] = useState(150);
+  const { categoryFilterHandler, rangeFilterHandler } = props;
   const inputEL = useRef(null);
   category = new Set(category);
-  category = Array.from(category).filter((category) => category);
+  category = Array.from(category).filter((categorya) => categorya);
   const categoryFilterValidator = (e) => {
     if (e.target.checked) {
       categoryFilterHandler(e.target.name);
@@ -77,6 +78,26 @@ export default function Categories(props) {
         </div>
       </div>
       {categoryList}
+
+      <div className="mt3">
+        <label htmlFor="val">Filter by price (between 10 and 50):</label>
+        <div className="mt1">
+          <input
+            type="range"
+            id="vol"
+            name="vol"
+            min="10"
+            max="150"
+            step={10}
+            value={priceRange}
+            onChange={(e) => {
+              setPriceRange(e.target.value);
+              rangeFilterHandler(e.target.value);
+            }}
+          />
+        </div>
+        <div>Below Rs.{priceRange} Products </div>
+      </div>
     </div>
   );
 }

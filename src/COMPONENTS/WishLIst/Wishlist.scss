@@ -1,0 +1,26 @@
+.wishlist-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.wishlist-container {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.back-to-home.top {
+  top: 10%;
+  font-size: 15px;
+}
+
+.wishlist-trash-icon {
+  transition: all 0.3s;
+  transform-origin: bottom-left;
+
+  &:hover {
+    color: #ff0000;
+    transform: rotate(-5deg) scale(1.1);
+  }
+}

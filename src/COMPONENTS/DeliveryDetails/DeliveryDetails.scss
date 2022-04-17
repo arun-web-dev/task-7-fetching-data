@@ -1,0 +1,48 @@
+.deliver-details-container {
+  max-width: 90%;
+}
+
+.delivery-textarea {
+  resize: vertical;
+  width: 100% !important;
+}
+
+.form-container {
+  height: 80vh;
+  overflow-y: scroll;
+  &-form {
+    padding-right: 30px;
+  }
+}
+
+.place-order-btn.delivery {
+  width: 45%;
+}
+
+.place-order-btn.delivery-cancel {
+  max-width: 45%;
+}
+.delivery-address-container {
+  flex: 0.5;
+}
+
+.order-submitted-message {
+  position: fixed;
+  top: 70px;
+  width: 70%;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  color: #f0f0f0;
+  font-size: 25px;
+  background-color: #fb641b;
+  text-align: center;
+}
+
+.order-submitted-message.active {
+  left: 15%;
+}
+
+.place-order-btn.disabled {
+  cursor: not-allowed;
+}
