@@ -298,7 +298,7 @@ class DeliveryDetails extends Component {
   }
 }
 
-export default function (props) {
+export default function A(props) {
   const location = useLocation();
   const navigate = useNavigate();
   return <DeliveryDetails {...props} location={location} navigate={navigate} />;
