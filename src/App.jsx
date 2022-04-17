@@ -121,10 +121,6 @@ function App() {
     );
   };
 
-  const getCartItems = () => {
-    Commerce.cart.contents().then((items) => console.log(items));
-  };
-
   const removeFromCart = (id) => {
     const removeCartItem = cartItems.filter((item) => {
       return item.id !== id;
@@ -139,18 +135,6 @@ function App() {
     });
     setWishListItems(removeWishList);
     localStorage.setItem(WISH_LIST_STORAGE_KEY, JSON.stringify(removeWishList));
-  };
-
-  const emptyCart = () => {
-    Commerce.cart.empty().then((response) => console.log(response));
-  };
-
-  const ReteriveCardId = () => {
-    Commerce.cart.id().then((cartId) => console.log(cartId));
-  };
-
-  const deleteCart = () => {
-    Commerce.cart.delete().then((response) => console.log(response));
   };
 
   const categoryFilterHandler = (category) => {
