@@ -17,8 +17,7 @@ export default function PlaceOrder(props) {
     return Math.ceil(amount * percentage);
   };
   const discount = percentageCalculteHandler(totalValue, 0.05);
-  const coupoun = percentageCalculteHandler(totalValue, 0.03);
-  const total = totalValue - discount - coupoun;
+  const total = totalValue - discount;
 
   const showMessageHandler = (msg) => {
     return (
@@ -183,10 +182,7 @@ export default function PlaceOrder(props) {
                 <p>Discount</p>
                 <p className="price-details">Rs.-{discount}</p>
               </div>
-              <div className="flex justify-between mt3">
-                <p>Coupouns For you</p>
-                <p className="price-details">Rs.-{coupoun}</p>
-              </div>
+
               <div className="flex justify-between mt3">
                 <p>Delivery Charges</p>
                 <p className="price-details">FREE</p>
@@ -196,7 +192,7 @@ export default function PlaceOrder(props) {
                 <h2>Rs.{total}</h2>
               </div>
               <div className="mt2 price-details">
-                You will save Rs.{coupoun + discount}
+                You will save Rs.{discount}
               </div>
             </div>
             <div>

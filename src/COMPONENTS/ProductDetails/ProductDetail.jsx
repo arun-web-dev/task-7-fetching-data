@@ -3,6 +3,7 @@ import "./ProductDetails.scss";
 import { useLocation, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductDetail(props) {
   const location = useLocation();
@@ -10,6 +11,7 @@ export default function ProductDetail(props) {
   const [messageisActive, setMessageisActive] = useState(false);
   const [isAddToCartActive, setIsAddToCartActive] = useState(true);
   const { state } = location;
+  const navigate = useNavigate();
   const { addToCart, removeFromCart } = props;
 
   const messageEL = () => {
@@ -61,19 +63,35 @@ export default function ProductDetail(props) {
         </li>
 
         {isAddToCartActive ? (
-          <button
-            className="product-detail-right-btn mt3 pv2 ph4"
-            onClick={addToCartHandler}
-          >
-            Add To Cart
-          </button>
+          <div>
+            <button
+              className="product-detail-right-btn mt3 pv2 ph4"
+              onClick={addToCartHandler}
+            >
+              Add To Cart
+            </button>
+            <button
+              className="product-detail-right-btn mt3 pv2 ml2 ph4"
+              onClick={() => navigate("/placeOrder")}
+            >
+              Go To Cart
+            </button>
+          </div>
         ) : (
-          <button
-            className="product-detail-right-btn product-detail-right-btn-remove bg-red mt3 pv2 ph4"
-            onClick={removeFromCartHandler}
-          >
-            Remove From Cart
-          </button>
+          <div>
+            <button
+              className="product-detail-right-btn product-detail-right-btn-remove bg-red mt3 pv2 ph4"
+              onClick={removeFromCartHandler}
+            >
+              Remove From Cart
+            </button>
+            <button
+              className="product-detail-right-btn product-detail-right-btn-remove  ml2 bg-red mt3 pv2 ph4"
+              onClick={() => navigate("/placeOrder")}
+            >
+              Go to Cart
+            </button>
+          </div>
         )}
       </div>
       <div>{messageisActive && messageEL()}</div>
